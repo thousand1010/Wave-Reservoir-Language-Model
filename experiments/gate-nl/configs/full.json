@@ -1,0 +1,20 @@
+{
+  "source_lab_commit": "4da14c1cf702e5785655ebe35c101bff6adc25d9",
+  "n_sites": 64,
+  "mode_sets": [[3, 7], [3, 7, 11]],
+  "gammas": [0.0, -1.0, -2.0, 1.0],
+  "amplitude": 0.8,
+  "steps": 60,
+  "dt": 0.05,
+  "alpha": 0.05,
+  "thresholds": {
+    "linear_new_energy_max": 1e-12,
+    "nonlinear_new_fraction_min": 0.01,
+    "dt_ratio_min": 0.8,
+    "dt_ratio_max": 1.25
+  },
+  "reference_tolerances": {
+    "relative": 1e-8,
+    "absolute": 1e-12
+  }
+}
