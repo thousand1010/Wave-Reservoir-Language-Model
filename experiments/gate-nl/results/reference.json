@@ -1,0 +1,215 @@
+{
+  "cases": [
+    {
+      "dt_halving": {
+        "new_mode_energy_dt": 553.9474165993327,
+        "new_mode_energy_half_dt": 550.0322625187503,
+        "passed": true,
+        "ratio": 0.9929322640321758
+      },
+      "gamma_results": {
+        "-1": {
+          "input_mode_energy": 55.33225631433133,
+          "new_mode_energy": 553.9474165993327,
+          "new_to_input_fraction": 10.011292752142072,
+          "peak_amplitude": 3.072436227016001,
+          "stability_reference": {
+            "bounded": true,
+            "energy_final": 51.35103580751196,
+            "energy_max": 64.30806864172801,
+            "esp_ok": true,
+            "esp_rate": -0.052629754101647,
+            "esp_ratio": 0.8767140581141457,
+            "finite_time_lyapunov": 0.9469603215819307,
+            "usable": true
+          }
+        },
+        "-2": {
+          "input_mode_energy": 1071.275260174396,
+          "new_mode_energy": 251.97387088590892,
+          "new_to_input_fraction": 0.23520926903967648,
+          "peak_amplitude": 2.6638090087726427,
+          "stability_reference": {
+            "bounded": true,
+            "energy_final": 49.81021777259035,
+            "energy_max": 62.37846721507773,
+            "esp_ok": true,
+            "esp_rate": -0.015315710821789133,
+            "esp_ratio": 0.9624344904038783,
+            "finite_time_lyapunov": 1.140921982476157,
+            "usable": false
+          }
+        },
+        "0": {
+          "input_mode_energy": 3884.0210328478115,
+          "new_mode_energy": 1.171679521701522e-25,
+          "new_to_input_fraction": 3.016666263628424e-29,
+          "peak_amplitude": 1.6,
+          "stability_reference": {
+            "bounded": true,
+            "energy_final": 52.790382863066355,
+            "energy_max": 66.11059565588289,
+            "esp_ok": true,
+            "esp_rate": -0.04999999999999283,
+            "esp_ratio": 0.8824969025845237,
+            "finite_time_lyapunov": -0.04999999993255595,
+            "usable": true
+          }
+        },
+        "1": {
+          "input_mode_energy": 1755.672390522347,
+          "new_mode_energy": 1566.4444048031382,
+          "new_to_input_fraction": 0.8922190798575412,
+          "peak_amplitude": 1.6,
+          "stability_reference": {
+            "bounded": true,
+            "energy_final": 53.904118812275016,
+            "energy_max": 67.50535248491627,
+            "esp_ok": true,
+            "esp_rate": -0.005414571414232278,
+            "esp_ratio": 0.986554776917246,
+            "finite_time_lyapunov": 0.5222894510603499,
+            "usable": true
+          }
+        }
+      },
+      "input_modes": [
+        3,
+        7
+      ],
+      "nonlinear_max_fraction": 10.011292752142072,
+      "passed": true,
+      "predicted_new_modes": [
+        11,
+        63
+      ]
+    },
+    {
+      "dt_halving": {
+        "new_mode_energy_dt": 2032.1583545379365,
+        "new_mode_energy_half_dt": 2054.856600687724,
+        "passed": true,
+        "ratio": 1.0111695262817983
+      },
+      "gamma_results": {
+        "-1": {
+          "input_mode_energy": 1637.4426571134504,
+          "new_mode_energy": 2032.1583545379365,
+          "new_to_input_fraction": 1.2410561955924042,
+          "peak_amplitude": 3.7474040533520716,
+          "stability_reference": {
+            "bounded": true,
+            "energy_final": 56.213983979580476,
+            "energy_max": 70.39804910527317,
+            "esp_ok": true,
+            "esp_rate": -0.021929491917177482,
+            "esp_ratio": 0.9466519997914739,
+            "finite_time_lyapunov": 0.8127517246529863,
+            "usable": true
+          }
+        },
+        "-2": {
+          "input_mode_energy": 315.4170210305102,
+          "new_mode_energy": 1218.929570956784,
+          "new_to_input_fraction": 3.8645015635946836,
+          "peak_amplitude": 3.3637794924492774,
+          "stability_reference": {
+            "bounded": true,
+            "energy_final": 54.1942050927463,
+            "energy_max": 67.86863412360609,
+            "esp_ok": true,
+            "esp_rate": -0.029626029750691972,
+            "esp_ratio": 0.9286112630758048,
+            "finite_time_lyapunov": 1.299357969474881,
+            "usable": false
+          }
+        },
+        "0": {
+          "input_mode_energy": 5826.031549271724,
+          "new_mode_energy": 2.2126759543202995e-25,
+          "new_to_input_fraction": 3.797912756920948e-29,
+          "peak_amplitude": 2.4000000000000004,
+          "stability_reference": {
+            "bounded": true,
+            "energy_final": 57.995190572661556,
+            "energy_max": 72.62869458401946,
+            "esp_ok": true,
+            "esp_rate": -0.04999999999999298,
+            "esp_ratio": 0.8824969025845234,
+            "finite_time_lyapunov": -0.04999999993383397,
+            "usable": true
+          }
+        },
+        "1": {
+          "input_mode_energy": 585.2123534843694,
+          "new_mode_energy": 3491.37538926269,
+          "new_to_input_fraction": 5.965997416963178,
+          "peak_amplitude": 2.4000000000000004,
+          "stability_reference": {
+            "bounded": true,
+            "energy_final": 59.297629526940725,
+            "energy_max": 74.25976847291622,
+            "esp_ok": false,
+            "esp_rate": 0.0017594252157750686,
+            "esp_ratio": 1.0044082509167946,
+            "finite_time_lyapunov": 0.5381028478872915,
+            "usable": false
+          }
+        }
+      },
+      "input_modes": [
+        3,
+        7,
+        11
+      ],
+      "nonlinear_max_fraction": 5.965997416963178,
+      "passed": true,
+      "predicted_new_modes": [
+        15,
+        19,
+        59,
+        63
+      ]
+    }
+  ],
+  "config": {
+    "alpha": 0.05,
+    "amplitude": 0.8,
+    "dt": 0.05,
+    "gammas": [
+      0.0,
+      -1.0,
+      -2.0,
+      1.0
+    ],
+    "mode_sets": [
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        7,
+        11
+      ]
+    ],
+    "n_sites": 64,
+    "reference_tolerances": {
+      "absolute": 1e-12,
+      "relative": 1e-08
+    },
+    "source_lab_commit": "4da14c1cf702e5785655ebe35c101bff6adc25d9",
+    "steps": 60,
+    "thresholds": {
+      "dt_ratio_max": 1.25,
+      "dt_ratio_min": 0.8,
+      "linear_new_energy_max": 1e-12,
+      "nonlinear_new_fraction_min": 0.01
+    }
+  },
+  "evidence_class": "diagnostic",
+  "overall_pass": true,
+  "reproduction_tier": "full-reproduction",
+  "schema_version": 1,
+  "source_lab_commit": "4da14c1cf702e5785655ebe35c101bff6adc25d9"
+}

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this research prototype, please cite this repository."
+title: "Wave Reservoir Language Model"
+type: software
+authors:
+  - family-names: "Thousand1010"
+repository-code: "https://github.com/thousand1010/Wave-Reservoir-Language-Model"
+license: MIT
+date-released: 2026-09-06
+version: 0.1.0
