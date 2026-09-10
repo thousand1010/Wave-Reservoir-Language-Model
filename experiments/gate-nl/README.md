@@ -1,64 +1,62 @@
-# Gate NL: four-wave-mixing primitive diagnostic
+**English**: [README.en.md](README.en.md)
 
-## Question and classification
+# Gate NL: 四光波混合プリミティブの診断
 
-Does the cubic Kerr term in the published DNLS implementation generate the
-new Fourier modes predicted by four-wave mixing, while a linear control does
-not?
+## 問いと分類
 
-- Evidence class: `diagnostic`
-- Reproduction tier: `full-reproduction`
-- Source lab commit: `4da14c1cf702e5785655ebe35c101bff6adc25d9`
-- Training/data: none
-- Random experimental seeds: none
+公開された DNLS 実装の 3 次のカー項は、四光波混合によって予測される新しいフーリエ
+モードを生成するか。また、線形コントロール（対照条件）はそれを生成しないか。
 
-## Method
+- 証拠クラス: `diagnostic`
+- 再現ティア: `full-reproduction`
+- ラボ側のソースコミット: `4da14c1cf702e5785655ebe35c101bff6adc25d9`
+- 訓練・データ: なし
+- 実験用の乱数シード: なし
 
-The diagnostic initializes a periodic 64-site field with mode sets `[3, 7]`
-and `[3, 7, 11]`. It evolves each state for 60 steps at `dt=0.05`,
-`alpha=0.05`, and amplitude `0.8`, comparing `gamma=0` with three nonlinear
-settings. It measures final state energy at cubic-mixing modes
-`k_i + k_j - k_l` that are absent from the input. A second nonlinear run halves
-`dt` and doubles the step count to hold simulated time fixed.
+## 方法
 
-The pass contract is fixed in [`configs/full.json`](configs/full.json):
+本診断は、周期境界の 64 サイト場を、モード集合 `[3, 7]` と `[3, 7, 11]` で初期化する。
+各状態を `dt=0.05`、`alpha=0.05`、振幅 `0.8` で 60 ステップ発展させ、`gamma=0` と
+3 通りの非線形設定を比較する。入力に含まれない 3 次混合モード `k_i + k_j - k_l` に
+おける最終状態のエネルギーを測定する。第 2 の非線形ランでは `dt` を半分にしステップ数を
+倍にすることで、シミュレーション時間を一定に保つ。
 
-1. linear new-mode energy is below `1e-12`;
-2. at least one nonlinear setting has new/input mode energy ratio at least
-   `0.01`;
-3. the new-mode energy ratio after halving `dt` lies in `[0.8, 1.25]`.
+合格条件 (pass contract) は [`configs/full.json`](configs/full.json) に固定されている。
 
-Gate S finite-time stability values are included as reference measurements,
-matching the original diagnostic. They do not replace a stability evaluation
-for a learned end-to-end system.
+1. 線形の新規モードのエネルギーが `1e-12` 未満であること。
+2. 少なくとも 1 つの非線形設定で、新規モード／入力モードのエネルギー比が `0.01` 以上で
+   あること。
+3. `dt` を半分にした後の新規モードのエネルギー比が `[0.8, 1.25]` の範囲にあること。
 
-## Reproduce
+Gate S の有限時間安定性の値は、元の診断に合わせて参照測定値として含めてある。これらは、
+学習済みのエンドツーエンドなシステムに対する安定性評価を置き換えるものではない。
 
-From the repository root:
+## 再現手順
+
+リポジトリのルートから実行する。
 
 ```bash
 python -m pip install -r requirements.txt
 python experiments/gate-nl/reproduce.py --check-reference
 ```
 
-The command reruns every public case, checks the decision contract, and
-compares the output with [`results/reference.json`](results/reference.json).
-Numeric comparison uses `relative=1e-8` and `absolute=1e-12`; exact JSON byte
-equality is not required across platforms.
+このコマンドは公開されている全ケースを再実行し、判定契約を検査し、出力を
+[`results/reference.json`](results/reference.json) と比較する。数値比較には
+`relative=1e-8` と `absolute=1e-12` を用いる。プラットフォーム間での JSON の
+バイト単位の完全一致は要求しない。
 
-## Result and limits
+## 結果と限界
 
-The fixed public cases pass: the linear control remains below the numerical
-zero threshold, nonlinear runs create the predicted modes, and the result is
-stable to halving the integration step.
+固定された公開ケースは合格する。線形コントロールは数値的ゼロのしきい値を下回ったまま
+であり、非線形ランは予測されたモードを生成し、その結果は積分ステップを半分にしても
+安定である。
 
-This supports a narrow implementation-level FWM claim. It does not demonstrate
-language-model behavior, useful recall, sample efficiency, or superiority over
-another nonlinear reservoir. During selection, a separate matched-reader lab
-comparison found that an echo-state network reproduced the downstream
-degree-parity effect with much better sample efficiency. That comparison is not
-reproduced by this package, so it is stated only as a claim boundary and not as
-publicly reproducible evidence here.
+これは実装レベルの FWM に関する限定的な主張を支持する。言語モデルとしての挙動、有用な
+想起、サンプル効率、あるいは他の非線形リザバーに対する優位性を示すものではない。
+選抜の過程で、別途行ったラボ内の matched-reader 比較において、エコーステート
+ネットワーク (ESN) が下流の次数パリティ効果を、はるかに優れたサンプル効率で再現する
+ことが分かっている。この比較は本パッケージでは再現されないため、公開して再現可能な
+証拠としてではなく、主張の境界としてのみ記載する。
 
-AI assistants helped port, document, and review this public package. The human
-owner selected the experiment and approved the publication scope and claims.
+AI アシスタントは、この公開パッケージの移植、文書化、レビューを支援した。実験の選択と、
+公開範囲および主張の承認は人間のオーナーが行った。
